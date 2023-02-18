@@ -43,7 +43,7 @@ function addNote(){
         content: ""
     };
 
-    const noteElement = createNoteElement(noteObject.id, noteElement);
+    const noteElement = createNoteElement(noteObject.id, noteObject.content);
     notesContainer.insertBefore(noteElement, addNoteButton);
 
     notes.push(noteObject);
@@ -57,7 +57,7 @@ function updateNote(id, newContent){
     saveNotes(notes);
 }
 function deleteNote(id, element){
-    const notes = getNotes().filter(note => note.id |= id);
+    const notes = getNotes().filter(note => note.id != id);
     
     saveNotes(notes);
     notesContainer.removeChild(element);
