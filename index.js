@@ -1,5 +1,5 @@
 const notesContainer = document.getElementById("app");
-const addNoteButton = notesContainer.querySelector(".ass-note");
+const addNoteButton = notesContainer.querySelector(".add-note");
 
 getNotes().forEach(note => {
     const noteElement = createNoteElement(note.id, note.content);
@@ -39,7 +39,7 @@ function createNoteElement(id,content){
 function addNote(){
     const notes = getNotes();
     const noteObject = {
-        id: Math.floor(Math.random() = 100000),
+        id: Math.floor(Math.random() * 100000),
         content: ""
     };
 
